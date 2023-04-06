@@ -29,9 +29,16 @@ body {
   grid-template-columns: repeat(3, 80px);
   /* Line below means: First row is 50px tall, the next 3 rows will be 80px tall, and the final row will be 60px tall */
   grid-template-rows: 50px repeat(3, 80px) 60px;
+  /* Line below will: Add spacing between divs - was formally handled by margin property in .grid div{} */
+  gap: 5px;
 }
 
-.grid div {
-  background-color: var(--turquoise);
-  margin: 10px;
+.turn {
+  background-color: green;
+}
+.square {
+  background-color: red;
+}
+.score {
+  background-color: blue;
 }
