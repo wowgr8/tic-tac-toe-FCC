@@ -23,19 +23,25 @@ body {
   background-color: var(--dark-gray);
 }
 
+body {
+  /* Will bring contents in <Main> Dead Center of screen */
+  padding: 90px 20px;
+  display: flex;
+  flex-direction: column; /* Below will center contents Horizontally */
+  justify-content: center; /* Below will center contents Vertically */
+  align-items: center;
+}
+
 .grid {
   display: grid;
-  /* Line below means: Each column is going to be 80px wide */
-  grid-template-columns: repeat(3, 80px);
-  /* Line below means: First row is 50px tall, the next 3 rows will be 80px tall, and the final row will be 60px tall */
-  grid-template-rows: 50px repeat(3, 80px) 60px;
-  /* Line below will: Add spacing between divs - was formally handled by margin property in .grid div{} */
-  gap: 5px;
+  grid-template-columns: repeat(3, 80px); /* Each column is going to be 80px wide */
+  grid-template-rows: 50px repeat(3, 80px) 60px;   /* First row is 50px tall, the next 3 rows will be 80px tall, and the final row will be 60px tall */
+  gap: 5px; /* Add spacing between divs - was formally handled by margin property in .grid div{} */
 }
 
 .turn {
   background-color: green;
-  /* Two lines below will: Span a div two columns wide*/
+  /* Two lines below will: Span a div 2 columns wide*/
   grid-column-start: 1;
   grid-column-end: 3;
 }
