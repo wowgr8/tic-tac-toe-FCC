@@ -51,10 +51,29 @@ body {
 }
 
 .turn {
-  background-color: green;
+  color:var(--yellow);
   /* Two lines below will: Span a div 2 columns wide*/
   grid-column-start: 1;
   grid-column-end: 3;
+  align-self: center;
+  /* Bottom three lines tells app how to align items within this grid container. */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+
+.turn p {
+  font-size: 14px;
+}
+
+
+
+.turn i {
+  font-size: 1.8rem;
+  margin-left: 10px;
 }
 
 .square {
