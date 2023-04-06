@@ -35,10 +35,19 @@ body {
 
 .turn {
   background-color: green;
+  /* Two lines below will: Span a div two columns wide*/
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
+
 .square {
   background-color: red;
 }
+
 .score {
   background-color: blue;
+}
+
+.actions {
+  background-color: purple;
 }
