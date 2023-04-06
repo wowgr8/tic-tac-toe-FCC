@@ -210,3 +210,17 @@ footer p {
 footer a {
   color: var(--yellow);
 }
+
+/* Modal styles - opens when game finishes  */
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* relative to the entire viewport */
+  /* width and height will work because we have given html .body a height of 100%  */
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
