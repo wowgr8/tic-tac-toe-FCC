@@ -32,11 +32,22 @@ body {
   align-items: center;
 }
 
-.grid {
+/* Mobile styles */
+.grid { 
   display: grid;
   grid-template-columns: repeat(3, 80px); /* Each column is going to be 80px wide */
   grid-template-rows: 50px repeat(3, 80px) 60px;   /* First row is 50px tall, the next 3 rows will be 80px tall, and the final row will be 60px tall */
   gap: 5px; /* Add spacing between divs - was formally handled by margin property in .grid div{} */
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .grid {
+    width: 490px;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 50px repeat(3, 150px) 60px;
+    gap: 20px;
+  }
 }
 
 .turn {
