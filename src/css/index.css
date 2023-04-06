@@ -62,6 +62,12 @@ body {
   gap: 20px;
 }
 
+.turn p {
+  font-size: 14px;
+  /* Duration: 0.6s,  behavior: ease-in-out, reference(name you'll refer to in @keyframe): turn-text-animation*/
+  animation: 0.6s ease-in-out turn-text-animation;
+}
+
 @keyframes turn-text-animation {
   0% {
     opacity: 0;
@@ -73,10 +79,11 @@ body {
   }
 }
 
-.turn p {
-  font-size: 14px;
-  /* Duration: 0.6s,  behavior: ease-in-out, reference(name you'll refer to in @keyframe): turn-text-animation*/
-  animation: 0.6s ease-in-out turn-text-animation;
+.turn i {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  /* Duration: 0.6s,  behavior: ease-in-out, reference(name you'll refer to in @keyframe): turn-icon-animation*/
+  animation: 0.6s ease-in-out turn-icon-animation;
 }
 
 @keyframes turn-icon-animation {
@@ -91,13 +98,6 @@ body {
   }
 }
 
-.turn i {
-  font-size: 1.8rem;
-  margin-left: 10px;
-  /* Duration: 0.6s,  behavior: ease-in-out, reference(name you'll refer to in @keyframe): turn-icon-animation*/
-  animation: 0.6s ease-in-out turn-icon-animation;
-}
-
 .square {
   background-color: red;
 }
@@ -106,8 +106,22 @@ body {
   background-color: blue;
 }
 
-.actions {
-  background-color: purple;
+/* Menu styles  */
+.menu {
+  /* background-color: purple; */
+  position: relative;
+}
+
+.menu-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-color: rgba(211, 211, 211, 0.05);
+  border: 1px solid transparent;
+  border-radius: 10px;
 }
 
 /* Footer styles */
