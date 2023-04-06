@@ -133,6 +133,17 @@ body {
   padding: 10px;
 }
 
+.items button {
+  background-color: transparent;
+  padding: 8px;
+  color: white;
+}
+
+.items button:hover {
+text-decoration: underline;
+cursor: pointer;
+}
+
 /* Footer styles */
 footer {
   color: white;
