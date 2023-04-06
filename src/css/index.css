@@ -17,6 +17,21 @@
   border: none;
 }
 
+html,
+body {
+  height: 100%;
+  background-color: var(--dark-gray);
+}
+
 .grid {
   display: grid;
+  /* Line below means: Each column is going to be 80px wide */
+  grid-template-columns: repeat(3, 80px);
+  /* Line below means: First row is 50px tall, the next 3 rows will be 80px tall, and the final row will be 60px tall */
+  grid-template-rows: 50px repeat(3, 80px) 60px;
+}
+
+.grid div {
+  background-color: var(--turquoise);
+  margin: 10px;
 }
