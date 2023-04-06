@@ -224,3 +224,26 @@ footer a {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.modal-contents {
+  /* transform: translateY(-80px); */
+  height: 150px;
+  width: 100%;
+  /* By default: 100% width but if screen is big enough where 100% width is larger than 300px, then default to max width. Just a trick to use with mobile first css so it will always look good on any screen.  */
+  max-width: 300px;
+  background-color: #2a4544;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  margin: 10px;
+}
+
+.modal-contents button {
+  padding: 10px;
+  background-color: var(--turquoise);
+  color: #2a4544;
+  border-radius: 3px;
+}
