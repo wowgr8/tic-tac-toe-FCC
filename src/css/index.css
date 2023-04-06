@@ -150,7 +150,7 @@ button:hover {
 
 .score p {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 600; /* Part of google font import, would not be able to use otherwise */
 }
 
 .score span {
