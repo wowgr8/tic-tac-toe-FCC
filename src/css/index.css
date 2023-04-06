@@ -108,7 +108,6 @@ body {
 
 /* Menu styles  */
 .menu {
-  /* background-color: purple; */
   position: relative;
 }
 
@@ -122,6 +121,16 @@ body {
   background-color: rgba(211, 211, 211, 0.05);
   border: 1px solid transparent;
   border-radius: 10px;
+}
+
+.items {
+  position: absolute;
+  z-index: 10; /* Means it will sit over the grid of items, not behind*/
+  top: 60px;
+  right: 0;
+  background-color: #203139;
+  border-radius: 2px;
+  padding: 10px;
 }
 
 /* Footer styles */
