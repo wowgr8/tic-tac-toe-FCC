@@ -241,6 +241,7 @@ footer a {
   margin: 10px;
 }
 
+/* This CSS code defines the styling for buttons within a modal window. */
 .modal-contents button {
   padding: 10px;
   background-color: var(--turquoise);
