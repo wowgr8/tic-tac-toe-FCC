@@ -35,8 +35,13 @@ const App = {
       square.addEventListener('click', event => {
 
         // Check if there is already a play, if so, return early.
-        if (square.hasChildNodes()) {
-          return
+        const hasMove = (squareId) => {
+          const existingMove = App.state.moves.find(move => move.squareId === squareId)
+          return existingMove !== undefined
+        }
+
+        if (hasMove(+square.id)) {
+          return;
         }
 
         // Determine which player icon to add to the square.
@@ -59,9 +64,7 @@ const App = {
           squareId: +square.id, 
           playerId: currentPlayer,
         })
-
-        App.state.currentPlayer = currentPlayer === 1 ? 2 : 1;
-
+        
         square.replaceChildren(icon);
 
         // Check if there is a winner or tie game
