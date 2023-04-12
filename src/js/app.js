@@ -9,6 +9,10 @@ const App = {
     squares: document.querySelectorAll('[data-id="square"]')
   },
 
+  state: {
+    currentPlayer: 1,
+  },
+
   // Where we will add eventListeners to our application
   init(){
     App.registerEventListeners()
@@ -30,9 +34,18 @@ const App = {
     App.$.squares.forEach(square => {
       square.addEventListener('click', event => {
         console.log(`Square w/ id ${event.target.id} was clicked`);
+        console.log(`Current player is: ${App.state.currentPlayer}`);
 
+        const currentPlayer = App.state.currentPlayer
         const icon = document.createElement('i');
-        icon.classList.add('fa-solid', 'fa-x', 'yellow');
+
+        if(currentPlayer === 1) {
+          icon.classList.add('fa-solid', 'fa-x', 'yellow');
+        } else {
+          icon.classList.add('fa-solid', 'fa-o', 'turquoise');
+        }
+        
+        App.state.currentPlayer = App.state.currentPlayer === 1 ? 2 : 1;
 
         event.target.replaceChildren(icon);
       })
