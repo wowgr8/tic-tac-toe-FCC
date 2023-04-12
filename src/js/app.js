@@ -11,6 +11,10 @@ const App = {
 
   // Where we will add eventListeners to our application
   init(){
+    App.registerEventListeners()
+  },
+
+  registerEventListeners() {
     App.$.menu.addEventListener('click', event => {
       App.$.menuItems.classList.toggle('hidden');
     });
@@ -27,8 +31,8 @@ const App = {
       square.addEventListener('click', event => {
         console.log(`Square w/ id ${event.target.id} was clicked`)
       })
-    })
-  },
+    });
+  }
 }
 
 window.addEventListener("load", App.init);
