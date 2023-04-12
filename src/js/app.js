@@ -29,7 +29,12 @@ const App = {
 
     App.$.squares.forEach(square => {
       square.addEventListener('click', event => {
-        console.log(`Square w/ id ${event.target.id} was clicked`)
+        console.log(`Square w/ id ${event.target.id} was clicked`);
+
+        const icon = document.createElement('i');
+        icon.classList.add('fa-solid', 'fa-x', 'yellow');
+
+        event.target.replaceChildren(icon);
       })
     });
   }
