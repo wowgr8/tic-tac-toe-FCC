@@ -10,7 +10,7 @@ const App = {
   },
 
   state: {
-    currentPlayer: 1,
+    moves: [],
   },
 
   // Where we will add eventListeners to our application
@@ -40,7 +40,13 @@ const App = {
         }
 
         // Determine which player icon to add to the square.
-        const currentPlayer = App.state.currentPlayer
+        const lastMove = App.state.moves.at(-1);
+        const getOppositePlayer = (playerId) => (playerId === 1 ? 2 : 1);
+        const currentPlayer = 
+          App.state.moves.length === 0
+            ? 1
+            : getOppositePlayer(lastMove.playerId)
+
         const icon = document.createElement('i');
 
         if(currentPlayer === 1) {
@@ -49,7 +55,12 @@ const App = {
           icon.classList.add('fa-solid', 'fa-o', 'turquoise');
         }
         
-        App.state.currentPlayer = App.state.currentPlayer === 1 ? 2 : 1;
+        App.state.moves.push({
+          squareId: +square.id, 
+          playerId: currentPlayer,
+        })
+
+        App.state.currentPlayer = currentPlayer === 1 ? 2 : 1;
 
         square.replaceChildren(icon);
 
