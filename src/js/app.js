@@ -1,8 +1,17 @@
 
+const App = {
+  // All of our selected HTML elements
+  $: {
+    
+    menu: document.querySelector('.menu'),
+    menuItems: document.querySelector('.items'),
+  },
+  // Where we will add eventListeners to our application
+  init(){
+    App.$.menu.addEventListener('click', event => {
+      App.$.menuItems.classList.toggle('hidden');
+    });
+  },
+}
 
-const menu = document.querySelector('.menu')
-const menuItems = menu.querySelector('.items')
-
-menu.addEventListener('click', event => {
-  menuItems.classList.toggle('hidden');
-});
+window.addEventListener("load", App.init);
