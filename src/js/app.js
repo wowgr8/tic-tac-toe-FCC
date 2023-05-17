@@ -15,8 +15,8 @@ const App = {
 
   getGameStatus(moves) {
 
-    const p1Moves = moves.filter(move => move.player.Id === 1);
-    const p2Moves = moves.filter(move => move.player.Id === 2);
+    const p1Moves = moves.filter(move => move.playerId === 1).map(move => +move.squareId);
+    const p2Moves = moves.filter(move => move.playerId === 2).map(move => +move.squareId);
 
     const winningPatterns = [
       [1, 2, 3],
@@ -33,7 +33,7 @@ const App = {
 
     winningPatterns.forEach(pattern => {
       const p1Wins = pattern.every(v => p1Moves.includes(v))
-      const p2Wins = pattern.every(v => p1Moves.includes(v))
+      const p2Wins = pattern.every(v => p2Moves.includes(v))
 
       if (p1Wins) winner = 1
       if (p2Wins) winner = 2
@@ -98,6 +98,9 @@ const App = {
         })
 
         square.replaceChildren(icon);
+        // check if there is a winner or tie game
+        const status = App.getGameStatus(App.state.moves);
+        console.log(status)
       })
     });
   }
