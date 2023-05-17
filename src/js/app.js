@@ -40,7 +40,7 @@ const App = {
     })
 
     return {
-      status: 'in-progress', // in=progress || complete
+      status: moves.length === 9 || winner != null ? 'complete' : 'in-progress', // in=progress || complete
       winner: 1 // 1 || 2 || null
     }
   },
