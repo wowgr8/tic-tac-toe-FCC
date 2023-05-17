@@ -41,7 +41,7 @@ const App = {
 
     return {
       status: moves.length === 9 || winner != null ? 'complete' : 'in-progress', // in=progress || complete
-      winner: 1 // 1 || 2 || null
+      winner: winner // 1 || 2 || null
     }
   },
 
