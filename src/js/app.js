@@ -13,6 +13,13 @@ const App = {
     moves: [],
   },
 
+  getGameStatus(moves) {
+    return {
+      status: 'in-progress', // in=progress || complete
+      winner: 1 // 1 || 2 || null
+    }
+  },
+
   // Where we will add eventListeners to our application
   init(){
     App.registerEventListeners()
@@ -64,7 +71,7 @@ const App = {
           squareId: +square.id, 
           playerId: currentPlayer,
         })
-        
+
         square.replaceChildren(icon);
 
         // Check if there is a winner or tie game
