@@ -1,4 +1,3 @@
-
 const App = {
   // All of our selected HTML elements
   $: {
